@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/chop-tree-08.ogg-f6b6304dc77db8ca5ad703a999d3c585.oggstr"
+
+[deps]
+
+source_file="res://assets/chop-tree-08.ogg"
+dest_files=[ "res://.import/chop-tree-08.ogg-f6b6304dc77db8ca5ad703a999d3c585.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

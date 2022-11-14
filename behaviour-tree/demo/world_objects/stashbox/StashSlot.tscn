@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/SunnysideWorld_Tileset_V0.1.png" type="Texture" id=1]
+[ext_resource path="res://world_objects/stashbox/StashSlot.gd" type="Script" id=2]
+[ext_resource path="res://world_objects/stashbox/StashBox.tscn" type="PackedScene" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 208, 256, 16, 16 )
+
+[node name="StashSlot" type="Sprite"]
+texture = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="StashBox" parent="." instance=ExtResource( 3 )]
+visible = false
+collision_layer = 0
+collision_mask = 0

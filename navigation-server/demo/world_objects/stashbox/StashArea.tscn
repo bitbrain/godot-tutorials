@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://world_objects/stashbox/StashArea.gd" type="Script" id=1]
+[ext_resource path="res://assets/place.ogg" type="AudioStream" id=2]
+[ext_resource path="res://assets/take-box.ogg" type="AudioStream" id=3]
+
+[node name="StashArea" type="Node2D" groups=["StashArea"]]
+script = ExtResource( 1 )
+stash_size = 9
+stash_per_row = 3
+
+[node name="Slots" type="Node2D" parent="."]
+
+[node name="PlaceSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+volume_db = -10.0
+max_distance = 500.0
+attenuation = 2.82843
+bus = "WorldAudio"
+
+[node name="TakeSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+max_distance = 500.0
+attenuation = 3.13834
+bus = "WorldAudio"

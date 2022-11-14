@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://targets/RockTarget.gd" type="Script" id=1]
+[ext_resource path="res://assets/SunnysideWorld_Tileset_V0.1.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 5.0
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 16, 192, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 48, 192, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 64, 192, 16, 16 )
+
+[node name="RockTarget" type="StaticBody2D"]
+collision_layer = 3
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="SpriteFull" type="Sprite" parent="."]
+position = Vector2( 0, -1 )
+texture = SubResource( 2 )
+
+[node name="SpriteHalf" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1, -3 )
+texture = SubResource( 3 )
+
+[node name="SpriteAlmostGone" type="Sprite" parent="."]
+visible = false
+position = Vector2( 2, 2 )
+texture = SubResource( 4 )

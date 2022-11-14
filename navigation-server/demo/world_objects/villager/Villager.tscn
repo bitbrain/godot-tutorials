@@ -1,0 +1,236 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://world_objects/villager/Villager.gd" type="Script" id=1]
+[ext_resource path="res://assets/sunnyside_world_chatacter_anim_GOBLIN.png" type="Texture" id=2]
+[ext_resource path="res://util/JukeBox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/goblin-02.ogg" type="AudioStream" id=5]
+[ext_resource path="res://assets/goblin-01.ogg" type="AudioStream" id=6]
+[ext_resource path="res://assets/goblin-03.ogg" type="AudioStream" id=7]
+[ext_resource path="res://assets/goblin-04.ogg" type="AudioStream" id=8]
+[ext_resource path="res://assets/goblin-05.ogg" type="AudioStream" id=9]
+[ext_resource path="res://assets/goblin-07.ogg" type="AudioStream" id=10]
+[ext_resource path="res://assets/goblin-06.ogg" type="AudioStream" id=11]
+
+[sub_resource type="Animation" id=4]
+resource_name = "Idle_Left"
+length = 0.675
+loop = true
+step = 0.075
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.075, 0.15, 0.225, 0.3, 0.375, 0.45, 0.525, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 46, 47, 48, 49, 50, 51, 52, 53, 54 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( -1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Idle_Right"
+length = 0.675
+loop = true
+step = 0.075
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.075, 0.15, 0.225, 0.3, 0.375, 0.45, 0.525, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 46, 47, 48, 49, 50, 51, 52, 53, 54 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 46 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Swim_Left"
+length = 0.675
+loop = true
+step = 0.075
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.075, 0.15, 0.225, 0.3, 0.375, 0.45, 0.525, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 276, 277, 278, 279, 280, 281, 282, 283, 284 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( -1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Swim_Right"
+length = 0.9
+loop = true
+step = 0.075
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.075, 0.15, 0.225, 0.3, 0.375, 0.45, 0.525, 0.6, 0.675, 0.75, 0.825 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 16.0
+
+[node name="Villager" type="KinematicBody2D" groups=["Villagers"]]
+collision_layer = 2
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -6 )
+texture = ExtResource( 2 )
+hframes = 23
+vframes = 20
+frame = 46
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Idle_Left = SubResource( 4 )
+anims/Idle_Right = SubResource( 2 )
+anims/RESET = SubResource( 3 )
+anims/Swim_Left = SubResource( 5 )
+anims/Swim_Right = SubResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -3 )
+rotation = -1.5708
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 7 )
+
+[node name="VoiceSounds" parent="." instance=ExtResource( 4 )]
+
+[node name="Voice1" type="AudioStreamPlayer2D" parent="VoiceSounds"]
+stream = ExtResource( 6 )
+volume_db = -10.0
+max_distance = 1000.0
+attenuation = 3.86375
+
+[node name="Voice2" type="AudioStreamPlayer2D" parent="VoiceSounds"]
+stream = ExtResource( 5 )
+volume_db = -10.0
+max_distance = 1000.0
+attenuation = 3.86375
+
+[node name="Voice3" type="AudioStreamPlayer2D" parent="VoiceSounds"]
+stream = ExtResource( 7 )
+volume_db = -10.0
+max_distance = 1000.0
+attenuation = 3.86375
+
+[node name="Voice4" type="AudioStreamPlayer2D" parent="VoiceSounds"]
+stream = ExtResource( 8 )
+volume_db = -10.0
+max_distance = 1000.0
+attenuation = 3.86375
+
+[node name="Voice5" type="AudioStreamPlayer2D" parent="VoiceSounds"]
+stream = ExtResource( 9 )
+volume_db = -10.0
+max_distance = 1000.0
+attenuation = 3.86375
+
+[node name="Voice6" type="AudioStreamPlayer2D" parent="VoiceSounds"]
+stream = ExtResource( 11 )
+volume_db = -10.0
+max_distance = 1000.0
+attenuation = 3.86375
+
+[node name="Voice7" type="AudioStreamPlayer2D" parent="VoiceSounds"]
+stream = ExtResource( 10 )
+volume_db = -10.0
+max_distance = 1000.0
+attenuation = 3.86375
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+avoidance_enabled = true
+
+[connection signal="path_changed" from="NavigationAgent2D" to="." method="_on_NavigationAgent2D_path_changed"]
+[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_NavigationAgent2D_velocity_computed"]

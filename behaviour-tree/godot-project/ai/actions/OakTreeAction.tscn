@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends ActionLeaf
+
+var action_performed = false
+var action_queued = false
+var animation_finished = false
+var tree
+
+func tick(actor, blackboard):
+	if not actor.is_connected(\"action_performed\", self, \"_action_performed\"):
+		actor.connect(\"action_performed\", self, \"_action_performed\")
+	if not actor.is_connected(\"animation_finished\", self, \"_animation_finished\"):
+		actor.connect(\"animation_finished\", self, \"_animation_finished\")
+	
+	tree = blackboard.get(\"closest-tree\")
+	
+	if tree == null:
+		action_performed = false
+		action_queued = false
+		animation_finished = false
+		actor.disconnect(\"action_performed\", self, \"_action_performed\")
+		actor.disconnect(\"animation_finished\", self, \"_animation_finished\")
+		return FAILURE
+		
+	if action_performed and animation_finished:
+		tree = null
+		action_performed = false
+		action_queued = false
+		animation_finished = false
+		actor.disconnect(\"action_performed\", self, \"_action_performed\")
+		actor.disconnect(\"animation_finished\", self, \"_animation_finished\")
+		return SUCCESS
+		
+	if not action_queued and not action_performed and not animation_finished:
+		action_queued = true
+		actor.dig()
+		
+	return RUNNING
+
+func _action_performed() -> void:
+	action_performed = true
+	tree.plant()
+
+func _animation_finished() -> void:
+	animation_finished = true
+	action_queued = false
+"
+
+[node name="TreeAction" type="Node"]
+script = SubResource( 1 )

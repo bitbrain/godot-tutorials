@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/watering.ogg-2f4b691b5e18f10d0f63d7ca2f73b9f0.oggstr"
+
+[deps]
+
+source_file="res://assets/watering.ogg"
+dest_files=[ "res://.import/watering.ogg-2f4b691b5e18f10d0f63d7ca2f73b9f0.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

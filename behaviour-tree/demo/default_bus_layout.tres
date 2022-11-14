@@ -1,0 +1,16 @@
+[gd_resource type="AudioBusLayout" load_steps=2 format=2]
+
+[sub_resource type="AudioEffectStereoEnhance" id=1]
+resource_name = "StereoEnhance"
+time_pullout_ms = 8.64
+surround = 0.35
+
+[resource]
+bus/1/name = "WorldAudio"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = -0.030508
+bus/1/send = "Master"
+bus/1/effect/0/effect = SubResource( 1 )
+bus/1/effect/0/enabled = true

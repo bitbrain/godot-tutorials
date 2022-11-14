@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=2]
+
+[sub_resource type="GDScript" id=4]
+script/source = "extends RemoteTransform2D
+"
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "arrive"
+length = 5.0
+
+[sub_resource type="Animation" id=2]
+resource_name = "depart"
+length = 5.0
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 5 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 150, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 5 )
+}
+
+[node name="ShipController" type="RemoteTransform2D"]
+use_global_coordinates = false
+update_rotation = false
+update_scale = false
+script = SubResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 3 )
+anims/arrive = SubResource( 1 )
+anims/depart = SubResource( 2 )

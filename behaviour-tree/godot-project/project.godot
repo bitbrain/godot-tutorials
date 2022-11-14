@@ -1,0 +1,236 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Leaf",
+"class": "ActionLeaf",
+"language": "GDScript",
+"path": "res://addons/beehave/nodes/leaves/action.gd"
+}, {
+"base": "Decorator",
+"class": "AlwaysFailDecorator",
+"language": "GDScript",
+"path": "res://addons/beehave/nodes/decorators/failer.gd"
+}, {
+"base": "Decorator",
+"class": "AlwaysSucceedDecorator",
+"language": "GDScript",
+"path": "res://addons/beehave/nodes/decorators/succeeder.gd"
+}, {
+"base": "BeehaveTree",
+"class": "BeehaveNode",
+"language": "GDScript",
+"path": "res://addons/beehave/nodes/beehave_node.gd"
+}, {
+"base": "BeehaveTree",
+"class": "BeehaveRoot",
+"language": "GDScript",
+"path": "res://addons/beehave/nodes/beehave_root.gd"
+}, {
+"base": "Node",
+"class": "BeehaveTree",
+"language": "GDScript",
+"path": "res://addons/beehave/nodes/beehave_tree.gd"
+}, {
+"base": "AnimationTree",
+"class": "BlendPositionAnimationTree",
+"language": "GDScript",
+"path": "res://util/BlendPositionAnimationTree.gd"
+}, {
+"base": "BeehaveNode",
+"class": "Composite",
+"language": "GDScript",
+"path": "res://addons/beehave/nodes/composites/composite.gd"
+}, {
+"base": "Leaf",
+"class": "ConditionLeaf",
+"language": "GDScript",
+"path": "res://addons/beehave/nodes/leaves/condition.gd"
+}, {
+"base": "CanvasModulate",
+"class": "DayNightCycle",
+"language": "GDScript",
+"path": "res://scenes/CanvasModulate.gd"
+}, {
+"base": "BeehaveNode",
+"class": "Decorator",
+"language": "GDScript",
+"path": "res://addons/beehave/nodes/decorators/decorator.gd"
+}, {
+"base": "Node2D",
+"class": "House",
+"language": "GDScript",
+"path": "res://world_objects/house/House.gd"
+}, {
+"base": "Decorator",
+"class": "InverterDecorator",
+"language": "GDScript",
+"path": "res://addons/beehave/nodes/decorators/inverter.gd"
+}, {
+"base": "BeehaveNode",
+"class": "Leaf",
+"language": "GDScript",
+"path": "res://addons/beehave/nodes/leaves/leaf.gd"
+}, {
+"base": "Decorator",
+"class": "LimiterDecorator",
+"language": "GDScript",
+"path": "res://addons/beehave/nodes/decorators/limiter.gd"
+}, {
+"base": "Composite",
+"class": "SelectorComposite",
+"language": "GDScript",
+"path": "res://addons/beehave/nodes/composites/selector.gd"
+}, {
+"base": "Composite",
+"class": "SelectorStarComposite",
+"language": "GDScript",
+"path": "res://addons/beehave/nodes/composites/selector_star.gd"
+}, {
+"base": "Composite",
+"class": "SequenceComposite",
+"language": "GDScript",
+"path": "res://addons/beehave/nodes/composites/sequence.gd"
+}, {
+"base": "Composite",
+"class": "SequenceStarComposite",
+"language": "GDScript",
+"path": "res://addons/beehave/nodes/composites/sequence_star.gd"
+}, {
+"base": "Node2D",
+"class": "Ship",
+"language": "GDScript",
+"path": "res://world_objects/ship/Ship.gd"
+}, {
+"base": "Node2D",
+"class": "StashArea",
+"language": "GDScript",
+"path": "res://world_objects/stashbox/StashArea.gd"
+}, {
+"base": "RigidBody2D",
+"class": "StashBox",
+"language": "GDScript",
+"path": "res://world_objects/stashbox/StashBox.gd"
+}, {
+"base": "Sprite",
+"class": "StashSlot",
+"language": "GDScript",
+"path": "res://world_objects/stashbox/StashSlot.gd"
+}, {
+"base": "ActionLeaf",
+"class": "TreeAction",
+"language": "GDScript",
+"path": "res://ai/actions/OakTreeAction.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Villager",
+"language": "GDScript",
+"path": "res://world_objects/villager/Villager.gd"
+}, {
+"base": "StaticBody2D",
+"class": "WoodTree",
+"language": "GDScript",
+"path": "res://scenes/OakTree.gd"
+} ]
+_global_script_class_icons={
+"ActionLeaf": "res://addons/beehave/icons/action.svg",
+"AlwaysFailDecorator": "res://addons/beehave/icons/fail.svg",
+"AlwaysSucceedDecorator": "res://addons/beehave/icons/succeed.svg",
+"BeehaveNode": "res://addons/beehave/icons/action.svg",
+"BeehaveRoot": "res://addons/beehave/icons/tree.svg",
+"BeehaveTree": "",
+"BlendPositionAnimationTree": "",
+"Composite": "res://addons/beehave/icons/category_composite.svg",
+"ConditionLeaf": "res://addons/beehave/icons/condition.svg",
+"DayNightCycle": "",
+"Decorator": "res://addons/beehave/icons/category_decorator.svg",
+"House": "",
+"InverterDecorator": "res://addons/beehave/icons/inverter.svg",
+"Leaf": "res://addons/beehave/icons/action.svg",
+"LimiterDecorator": "res://addons/beehave/icons/limiter.svg",
+"SelectorComposite": "res://addons/beehave/icons/selector.svg",
+"SelectorStarComposite": "res://addons/beehave/icons/selector.svg",
+"SequenceComposite": "res://addons/beehave/icons/sequencer.svg",
+"SequenceStarComposite": "res://addons/beehave/icons/sequencer.svg",
+"Ship": "",
+"StashArea": "",
+"StashBox": "",
+"StashSlot": "",
+"TreeAction": "",
+"Villager": "",
+"WoodTree": ""
+}
+
+[application]
+
+config/name="Godot Tutorial: Behaviour Trees"
+run/main_scene="res://scenes/BehaviourTreeScene.tscn"
+config/icon="res://icon.png"
+
+[display]
+
+window/size/width=960
+window/size/height=540
+window/size/test_width=1920
+window/size/test_height=1080
+window/dpi/allow_hidpi=true
+window/vsync/vsync_via_compositor=true
+window/stretch/mode="2d"
+window/stretch/aspect="keep_height"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/beehave/plugin.cfg" )
+
+[importer_defaults]
+
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d": false,
+"flags/anisotropic": false,
+"flags/filter": false,
+"flags/mipmaps": false,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/normal_map_invert_y": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
+ogg_vorbis={
+"loop": false,
+"loop_offset": 0
+}
+
+[input]
+
+swap_camera={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":67,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":32,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":16777221,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

@@ -1,0 +1,71 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://addons/beehave/nodes/composites/sequence_star.gd" type="Script" id=1]
+[ext_resource path="res://ai/TraderAI.gd" type="Script" id=2]
+[ext_resource path="res://ai/actions/WalkToStashAction.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ai/actions/TakeBoxAction.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ai/actions/WalkToLocationAction.tscn" type="PackedScene" id=5]
+[ext_resource path="res://ai/actions/PlaceBoxAction.tscn" type="PackedScene" id=6]
+[ext_resource path="res://ai/Rest.tscn" type="PackedScene" id=7]
+[ext_resource path="res://ai/actions/LeaveHouseAction.tscn" type="PackedScene" id=8]
+[ext_resource path="res://addons/beehave/nodes/composites/selector.gd" type="Script" id=9]
+[ext_resource path="res://ai/conditions/HasStashFreeSpaceCondition.tscn" type="PackedScene" id=10]
+[ext_resource path="res://ai/conditions/HasShipArrivedCondition.tscn" type="PackedScene" id=11]
+[ext_resource path="res://addons/beehave/nodes/decorators/inverter.gd" type="Script" id=12]
+[ext_resource path="res://ai/conditions/IsStashEmptyCondition.tscn" type="PackedScene" id=13]
+[ext_resource path="res://ai/conditions/IsCarryingCondition.tscn" type="PackedScene" id=14]
+[ext_resource path="res://addons/beehave/nodes/composites/sequence.gd" type="Script" id=15]
+
+[node name="TraderAI" type="Node"]
+script = ExtResource( 2 )
+
+[node name="Either" type="Node" parent="."]
+script = ExtResource( 9 )
+
+[node name="WaitForGoods" type="Node" parent="Either"]
+script = ExtResource( 15 )
+
+[node name="NeedsToWait" type="Node" parent="Either/WaitForGoods"]
+script = ExtResource( 9 )
+
+[node name="ShipHasNotArrivedYet" type="Node" parent="Either/WaitForGoods/NeedsToWait"]
+script = ExtResource( 12 )
+
+[node name="HasShipArrived" parent="Either/WaitForGoods/NeedsToWait/ShipHasNotArrivedYet" instance=ExtResource( 11 )]
+unique_name_in_owner = true
+
+[node name="ShipIsFull" type="Node" parent="Either/WaitForGoods/NeedsToWait"]
+script = ExtResource( 12 )
+
+[node name="HasShipStashFreeSpace" parent="Either/WaitForGoods/NeedsToWait/ShipIsFull" instance=ExtResource( 10 )]
+unique_name_in_owner = true
+
+[node name="NoBoxAvailable" type="Node" parent="Either/WaitForGoods/NeedsToWait"]
+script = ExtResource( 15 )
+
+[node name="IsNotCarrying" type="Node" parent="Either/WaitForGoods/NeedsToWait/NoBoxAvailable"]
+script = ExtResource( 12 )
+
+[node name="IsCarrying" parent="Either/WaitForGoods/NeedsToWait/NoBoxAvailable/IsNotCarrying" instance=ExtResource( 14 )]
+
+[node name="IsStashEmpty" parent="Either/WaitForGoods/NeedsToWait/NoBoxAvailable" instance=ExtResource( 13 )]
+unique_name_in_owner = true
+
+[node name="Rest" parent="Either/WaitForGoods" instance=ExtResource( 7 )]
+
+[node name="DeliverGoods" type="Node" parent="Either"]
+script = ExtResource( 1 )
+
+[node name="LeaveHouseAction" parent="Either/DeliverGoods" instance=ExtResource( 8 )]
+
+[node name="WalkToStashArea" parent="Either/DeliverGoods" instance=ExtResource( 3 )]
+unique_name_in_owner = true
+
+[node name="TakeBoxAction" parent="Either/DeliverGoods" instance=ExtResource( 4 )]
+unique_name_in_owner = true
+
+[node name="WalkToDock" parent="Either/DeliverGoods" instance=ExtResource( 5 )]
+unique_name_in_owner = true
+
+[node name="PlaceBoxOnShip" parent="Either/DeliverGoods" instance=ExtResource( 6 )]
+unique_name_in_owner = true

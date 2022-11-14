@@ -1,0 +1,181 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://scenes/OakTree.gd" type="Script" id=1]
+[ext_resource path="res://assets/SunnysideWorld_Tileset_V0.1.png" type="Texture" id=2]
+[ext_resource path="res://assets/falling-tree.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/chop-tree-01.ogg" type="AudioStream" id=4]
+[ext_resource path="res://assets/chop-tree-02.ogg" type="AudioStream" id=5]
+[ext_resource path="res://assets/chop-tree-04.ogg" type="AudioStream" id=6]
+[ext_resource path="res://assets/chop-tree-08.ogg" type="AudioStream" id=7]
+[ext_resource path="res://assets/chop-tree-03.ogg" type="AudioStream" id=8]
+[ext_resource path="res://assets/chop-tree-05.ogg" type="AudioStream" id=9]
+[ext_resource path="res://assets/chop-tree-06.ogg" type="AudioStream" id=10]
+[ext_resource path="res://assets/chop-tree-07.ogg" type="AudioStream" id=11]
+[ext_resource path="res://util/JukeBox.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/shovel-01.ogg" type="AudioStream" id=13]
+[ext_resource path="res://assets/shovel-02.ogg" type="AudioStream" id=14]
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 2 )
+region = Rect2( 64, 384, 32, 48 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 2 )
+region = Rect2( 16, 208, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 48, 208, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 80, 208, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 112, 208, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 144, 208, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 176, 192, 32, 48 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 64, 336, 32, 48 )
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 5.0
+height = 6.0
+
+[node name="Tree" type="StaticBody2D" groups=["Trees"]]
+script = ExtResource( 1 )
+state = 2
+
+[node name="ChopSprites" type="Node2D" parent="."]
+
+[node name="ChopSprite1" type="Sprite" parent="ChopSprites"]
+visible = false
+position = Vector2( 0, -10 )
+texture = SubResource( 8 )
+region_rect = Rect2( 64, 384, 32, 48 )
+
+[node name="ChopSprite2" type="Sprite" parent="ChopSprites"]
+visible = false
+position = Vector2( 0, -5 )
+texture = SubResource( 9 )
+region_rect = Rect2( 64, 384, 32, 48 )
+
+[node name="PlantedSprite" type="Sprite" parent="."]
+visible = false
+texture = SubResource( 2 )
+
+[node name="GrowSprites" type="Node2D" parent="."]
+
+[node name="GrowSprite1" type="Sprite" parent="GrowSprites"]
+visible = false
+texture = SubResource( 3 )
+
+[node name="GrowSprite2" type="Sprite" parent="GrowSprites"]
+visible = false
+texture = SubResource( 4 )
+
+[node name="GrowSprite3" type="Sprite" parent="GrowSprites"]
+visible = false
+position = Vector2( 0, -3 )
+texture = SubResource( 5 )
+
+[node name="GrowSprite4" type="Sprite" parent="GrowSprites"]
+visible = false
+position = Vector2( 0, -10 )
+texture = SubResource( 6 )
+
+[node name="GrownSprite" type="Sprite" parent="."]
+position = Vector2( 0, -10 )
+texture = SubResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.5708
+shape = SubResource( 1 )
+
+[node name="GrowTimer" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
+
+[node name="FallingTreeSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+volume_db = -25.0
+max_distance = 1000.0
+attenuation = 2.2974
+bus = "WorldAudio"
+
+[node name="ChopSounds" parent="." instance=ExtResource( 12 )]
+
+[node name="ChopSound1" type="AudioStreamPlayer2D" parent="ChopSounds"]
+stream = ExtResource( 4 )
+volume_db = -5.0
+max_distance = 1000.0
+attenuation = 2.37841
+
+[node name="ChopSound2" type="AudioStreamPlayer2D" parent="ChopSounds"]
+stream = ExtResource( 5 )
+volume_db = -5.0
+max_distance = 1000.0
+attenuation = 2.37841
+
+[node name="ChopSound3" type="AudioStreamPlayer2D" parent="ChopSounds"]
+stream = ExtResource( 8 )
+volume_db = -5.0
+max_distance = 1000.0
+attenuation = 2.37841
+
+[node name="ChopSound4" type="AudioStreamPlayer2D" parent="ChopSounds"]
+stream = ExtResource( 6 )
+volume_db = -5.0
+max_distance = 1000.0
+attenuation = 2.37841
+
+[node name="ChopSound5" type="AudioStreamPlayer2D" parent="ChopSounds"]
+stream = ExtResource( 9 )
+volume_db = -5.0
+max_distance = 1000.0
+attenuation = 2.37841
+
+[node name="ChopSound6" type="AudioStreamPlayer2D" parent="ChopSounds"]
+stream = ExtResource( 10 )
+volume_db = -5.0
+max_distance = 1000.0
+attenuation = 2.37841
+
+[node name="ChopSound7" type="AudioStreamPlayer2D" parent="ChopSounds"]
+stream = ExtResource( 11 )
+volume_db = -5.0
+max_distance = 1000.0
+attenuation = 2.37841
+
+[node name="ChopSound8" type="AudioStreamPlayer2D" parent="ChopSounds"]
+stream = ExtResource( 7 )
+volume_db = -5.0
+max_distance = 1000.0
+attenuation = 2.37841
+
+[node name="PlantSounds" parent="." instance=ExtResource( 12 )]
+
+[node name="PlantSound01" type="AudioStreamPlayer2D" parent="PlantSounds"]
+stream = ExtResource( 13 )
+volume_db = -15.0
+max_distance = 800.0
+attenuation = 1.51572
+bus = "WorldAudio"
+
+[node name="PlantSound02" type="AudioStreamPlayer2D" parent="PlantSounds"]
+stream = ExtResource( 14 )
+volume_db = -15.0
+max_distance = 800.0
+attenuation = 1.51572
+bus = "WorldAudio"
+
+[connection signal="timeout" from="GrowTimer" to="." method="_on_GrowTimer_timeout"]

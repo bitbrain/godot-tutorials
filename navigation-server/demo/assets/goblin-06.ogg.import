@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/goblin-06.ogg-78b3770a51dffffcd3e83c4e611242bd.oggstr"
+
+[deps]
+
+source_file="res://assets/goblin-06.ogg"
+dest_files=[ "res://.import/goblin-06.ogg-78b3770a51dffffcd3e83c4e611242bd.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

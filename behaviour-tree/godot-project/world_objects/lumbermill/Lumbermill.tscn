@@ -1,0 +1,187 @@
+[gd_scene load_steps=35 format=2]
+
+[ext_resource path="res://assets/SunnysideWorld_Tileset_V0.1.png" type="Texture" id=2]
+[ext_resource path="res://assets/chimneysmoke_02_strip30.png" type="Texture" id=3]
+
+[sub_resource type="TileSet" id=1]
+0/name = "SunnysideWorld_Tileset_V0.1.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 480, 32, 80, 96 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "SunnysideWorld_Tileset_V0.1.png 1"
+1/texture = ExtResource( 2 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 528, 192, 16, 16 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 10, 30 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 3 )
+region = Rect2( 10, 0, 10, 30 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 3 )
+region = Rect2( 20, 0, 10, 30 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 3 )
+region = Rect2( 30, 0, 10, 30 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 3 )
+region = Rect2( 40, 0, 10, 30 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 3 )
+region = Rect2( 50, 0, 10, 30 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 3 )
+region = Rect2( 60, 0, 10, 30 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 3 )
+region = Rect2( 70, 0, 10, 30 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 3 )
+region = Rect2( 80, 0, 10, 30 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 3 )
+region = Rect2( 90, 0, 10, 30 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 3 )
+region = Rect2( 100, 0, 10, 30 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 3 )
+region = Rect2( 110, 0, 10, 30 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 3 )
+region = Rect2( 120, 0, 10, 30 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 3 )
+region = Rect2( 130, 0, 10, 30 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 3 )
+region = Rect2( 140, 0, 10, 30 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 3 )
+region = Rect2( 150, 0, 10, 30 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 3 )
+region = Rect2( 160, 0, 10, 30 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 3 )
+region = Rect2( 170, 0, 10, 30 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 3 )
+region = Rect2( 180, 0, 10, 30 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 3 )
+region = Rect2( 190, 0, 10, 30 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 3 )
+region = Rect2( 200, 0, 10, 30 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 3 )
+region = Rect2( 210, 0, 10, 30 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 3 )
+region = Rect2( 220, 0, 10, 30 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 3 )
+region = Rect2( 230, 0, 10, 30 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 3 )
+region = Rect2( 240, 0, 10, 30 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 3 )
+region = Rect2( 250, 0, 10, 30 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 3 )
+region = Rect2( 260, 0, 10, 30 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 3 )
+region = Rect2( 270, 0, 10, 30 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 3 )
+region = Rect2( 280, 0, 10, 30 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 3 )
+region = Rect2( 290, 0, 10, 30 )
+
+[sub_resource type="SpriteFrames" id=32]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
+"loop": true,
+"name": "default",
+"speed": 15.0
+} ]
+
+[node name="Lumbermill" type="Node2D" groups=["Houses"]]
+
+[node name="TileLayer1" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
+format = 1
+tile_data = PoolIntArray( -196611, 0, 0 )
+
+[node name="TileLayer2" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
+format = 1
+tile_data = PoolIntArray( -196611, 0, 0, -65538, 1, 0 )
+
+[node name="ChimneySmoke" type="AnimatedSprite" parent="."]
+position = Vector2( -24, -41 )
+frames = SubResource( 32 )
+frame = 20
+playing = true
+
+[node name="EnterLeavePosition" type="Position2D" parent="."]
+position = Vector2( -9, 35 )

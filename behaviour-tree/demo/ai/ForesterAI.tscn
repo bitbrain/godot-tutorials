@@ -1,0 +1,43 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://addons/beehave/nodes/beehave_root.gd" type="Script" id=1]
+[ext_resource path="res://addons/beehave/nodes/composites/sequence.gd" type="Script" id=2]
+[ext_resource path="res://addons/beehave/nodes/decorators/inverter.gd" type="Script" id=3]
+[ext_resource path="res://ai/Rest.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/beehave/nodes/composites/selector.gd" type="Script" id=5]
+[ext_resource path="res://ai/conditions/HasChoppedTreeCondition.tscn" type="PackedScene" id=6]
+[ext_resource path="res://addons/beehave/nodes/composites/sequence_star.gd" type="Script" id=7]
+[ext_resource path="res://ai/actions/LeaveHouseAction.tscn" type="PackedScene" id=8]
+[ext_resource path="res://ai/actions/WalkToClosestTreeAction.tscn" type="PackedScene" id=9]
+[ext_resource path="res://ai/actions/PlantTreeAction.tscn" type="PackedScene" id=10]
+[ext_resource path="res://ai/actions/WaterTreeAction.tscn" type="PackedScene" id=12]
+
+[node name="ForesterAI" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Either" type="Node" parent="."]
+script = ExtResource( 5 )
+
+[node name="WaitForTrees" type="Node" parent="Either"]
+script = ExtResource( 2 )
+
+[node name="NeedsToWait" type="Node" parent="Either/WaitForTrees"]
+script = ExtResource( 5 )
+
+[node name="HasNoChoppedTree" type="Node" parent="Either/WaitForTrees/NeedsToWait"]
+script = ExtResource( 3 )
+
+[node name="HasChoppedTree" parent="Either/WaitForTrees/NeedsToWait/HasNoChoppedTree" instance=ExtResource( 6 )]
+
+[node name="Rest" parent="Either/WaitForTrees" instance=ExtResource( 4 )]
+
+[node name="SequenceStarComposite" type="Node" parent="Either"]
+script = ExtResource( 7 )
+
+[node name="LeaveHouseAction" parent="Either/SequenceStarComposite" instance=ExtResource( 8 )]
+
+[node name="WalkToClosestTreeAction" parent="Either/SequenceStarComposite" instance=ExtResource( 9 )]
+
+[node name="PlantTreeAction" parent="Either/SequenceStarComposite" instance=ExtResource( 10 )]
+
+[node name="WaterTreeAction" parent="Either/SequenceStarComposite" instance=ExtResource( 12 )]

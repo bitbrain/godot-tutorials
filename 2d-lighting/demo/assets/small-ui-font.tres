@@ -1,0 +1,13 @@
+[gd_resource type="DynamicFont" load_steps=2 format=2]
+
+[sub_resource type="DynamicFontData" id=1]
+antialiased = false
+hinting = 0
+font_path = "res://assets/pixelated.ttf"
+
+[resource]
+size = 8
+outline_size = 1
+outline_color = Color( 0.0941176, 0.0784314, 0.145098, 1 )
+extra_spacing_space = 1
+font_data = SubResource( 1 )

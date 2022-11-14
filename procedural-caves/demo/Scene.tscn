@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/TileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://assets/background.png" type="Texture" id=2]
+[ext_resource path="res://CaveGenerator.tscn" type="PackedScene" id=3]
+
+[node name="Scene" type="Node2D"]
+
+[node name="Background" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1920, 1080 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
+format = 1
+
+[node name="CaveGenerator" parent="TileMap" instance=ExtResource( 3 )]
+redraw = true
+world_seed = "whatsup"
+noise_period = 25
+noise_persistence = 5.0
+noise_lacunarity = 2.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Camera2D"]
+remote_path = NodePath("../../Background")

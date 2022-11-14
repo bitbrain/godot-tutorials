@@ -1,0 +1,57 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://addons/beehave/nodes/composites/sequence.gd" type="Script" id=1]
+[ext_resource path="res://ai/LumberjackAI.gd" type="Script" id=2]
+[ext_resource path="res://addons/beehave/nodes/composites/selector.gd" type="Script" id=3]
+[ext_resource path="res://ai/Rest.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/beehave/nodes/decorators/inverter.gd" type="Script" id=5]
+[ext_resource path="res://ai/conditions/HasStashFreeSpaceCondition.tscn" type="PackedScene" id=6]
+[ext_resource path="res://ai/conditions/HasGrownTreeCondition.tscn" type="PackedScene" id=7]
+[ext_resource path="res://addons/beehave/nodes/composites/sequence_star.gd" type="Script" id=8]
+[ext_resource path="res://ai/actions/LeaveHouseAction.tscn" type="PackedScene" id=9]
+[ext_resource path="res://ai/actions/WalkToClosestTreeAction.tscn" type="PackedScene" id=10]
+[ext_resource path="res://ai/actions/ChopTreeAction.tscn" type="PackedScene" id=11]
+[ext_resource path="res://ai/actions/WalkToStashAction.tscn" type="PackedScene" id=12]
+[ext_resource path="res://ai/actions/PlaceBoxAction.tscn" type="PackedScene" id=13]
+
+[node name="LumberjackAI" type="Node"]
+script = ExtResource( 2 )
+
+[node name="Either" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="WaitForTrees" type="Node" parent="Either"]
+script = ExtResource( 1 )
+
+[node name="NeedsToWait" type="Node" parent="Either/WaitForTrees"]
+script = ExtResource( 3 )
+
+[node name="HasNoFreeSpace" type="Node" parent="Either/WaitForTrees/NeedsToWait"]
+script = ExtResource( 5 )
+
+[node name="HasStashFreeSpace" parent="Either/WaitForTrees/NeedsToWait/HasNoFreeSpace" instance=ExtResource( 6 )]
+unique_name_in_owner = true
+
+[node name="HasNoGrownTree" type="Node" parent="Either/WaitForTrees/NeedsToWait"]
+script = ExtResource( 5 )
+
+[node name="HasGrownTree" parent="Either/WaitForTrees/NeedsToWait/HasNoGrownTree" instance=ExtResource( 7 )]
+
+[node name="Rest" parent="Either/WaitForTrees" instance=ExtResource( 4 )]
+
+[node name="ChopWood" type="Node" parent="Either"]
+script = ExtResource( 8 )
+
+[node name="LeaveHouseAction" parent="Either/ChopWood" instance=ExtResource( 9 )]
+
+[node name="WalkToClosestTreeAction" parent="Either/ChopWood" instance=ExtResource( 10 )]
+state = 1
+
+[node name="ChopTreeAction" parent="Either/ChopWood" instance=ExtResource( 11 )]
+
+[node name="WalkToStashAction" parent="Either/ChopWood" instance=ExtResource( 12 )]
+unique_name_in_owner = true
+type = 1
+
+[node name="PlaceBoxAction" parent="Either/ChopWood" instance=ExtResource( 13 )]
+unique_name_in_owner = true

@@ -1,0 +1,311 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://assets/SunnysideWorld_Tileset_V0.1.png" type="Texture" id=1]
+[ext_resource path="res://assets/ship-bell.ogg" type="AudioStream" id=2]
+[ext_resource path="res://world_objects/ship/Ship.gd" type="Script" id=3]
+[ext_resource path="res://assets/sunnyside_world_chatacter_anim_GOBLIN.png" type="Texture" id=4]
+[ext_resource path="res://world_objects/stashbox/StashArea.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/captain-hat.png" type="Texture" id=6]
+[ext_resource path="res://assets/shadow.png" type="Texture" id=7]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 240, 112, 32, 80 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 1 )
+region = Rect2( 272, 112, 32, 80 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 128, 864, 64 )
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("ShipPosition:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("ShipPosition:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ShipPosition/Sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ShipPosition/Captain:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -9, 21 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ShipPosition:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "arrive"
+length = 10.0
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 10 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_arrived"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 10 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "ring_bell"
+} ]
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("ShipPosition:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 200, -0.25, 0, 0.8, -22, 0, -9.6, 7, 0.25, 0 ),
+"times": PoolRealArray( 0, 10 )
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "depart"
+length = 10.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("ShipPosition:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 8.7, 30.5, 200, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 10 )
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "ring_bell"
+}, {
+"args": [  ],
+"method": "_departed"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_depart"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("ShipPosition/StashArea")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 10 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "clear"
+} ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "swim"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("ShipPosition:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 1 ), Vector2( 0, 0 ), Vector2( 0, -1 ) ]
+}
+
+[sub_resource type="Animation" id=19]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ShipPosition/Captain/Hat:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -8, 14 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ShipPosition/Captain:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "captain"
+length = 0.9
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("ShipPosition/Captain:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ShipPosition/Captain/Hat:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -1 ), Vector2( 0, 0 ), Vector2( 0, 2 ), Vector2( 0, 2 ), Vector2( 0, 2 ), Vector2( 0, 1 ) ]
+}
+
+[node name="Ship" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="ShipPosition" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="ShipPosition"]
+position = Vector2( 0, -1 )
+texture = SubResource( 1 )
+
+[node name="StashArea" parent="ShipPosition" instance=ExtResource( 5 )]
+position = Vector2( -8, -39 )
+stash_size = 4
+stash_per_row = 2
+show_ground = false
+
+[node name="Mast" type="Sprite" parent="ShipPosition"]
+position = Vector2( 0, -2 )
+texture = SubResource( 18 )
+
+[node name="Captain" type="Sprite" parent="ShipPosition"]
+position = Vector2( -9, 21 )
+texture = SubResource( 21 )
+hframes = 9
+
+[node name="Shadow" type="Sprite" parent="ShipPosition/Captain"]
+show_behind_parent = true
+position = Vector2( 0, 4 )
+texture = ExtResource( 7 )
+
+[node name="Hat" type="Sprite" parent="ShipPosition/Captain"]
+position = Vector2( -8, 14 )
+texture = ExtResource( 6 )
+
+[node name="ShipAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 6 )
+anims/arrive = SubResource( 4 )
+anims/depart = SubResource( 5 )
+anims/swim = SubResource( 7 )
+
+[node name="CaptainAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 19 )
+anims/captain = SubResource( 20 )
+
+[node name="ShipSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+volume_db = -10.0
+max_distance = 700.0
+attenuation = 1.80251
+bus = "WorldAudio"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="on_place" from="ShipPosition/StashArea" to="." method="_on_StashArea_on_place"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
