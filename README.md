@@ -1,4 +1,4 @@
-# Godot Tutorials
+# Godot Tutorials (Godot 3.x only)
 
 A curation of Godot tutorial source code created by bitbrain.
 
