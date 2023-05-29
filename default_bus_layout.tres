@@ -1,0 +1,16 @@
+[gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://dsgxorm8cjmlc"]
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_bwuw6"]
+resource_name = "Reverb"
+predelay_msec = 50.0
+predelay_feedback = 0.18
+room_size = 0.43
+damping = 0.18
+spread = 0.33
+hipass = 0.1
+dry = 0.52
+wet = 0.66
+
+[resource]
+bus/0/effect/0/effect = SubResource("AudioEffectReverb_bwuw6")
+bus/0/effect/0/enabled = true

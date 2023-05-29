@@ -1,0 +1,109 @@
+[gd_scene load_steps=10 format=3 uid="uid://ceolcwatpaicu"]
+
+[ext_resource type="Script" path="res://day-night-cycle/demo/ui/daynightcycle_ui.gd" id="1_altij"]
+[ext_resource type="Shader" path="res://assets/pixelperfect.gdshader" id="1_x3jdy"]
+[ext_resource type="FontFile" uid="uid://dt6jbuskqvs7g" path="res://assets/fonts/pixelmix/pixelmix.ttf" id="3_6qa0r"]
+[ext_resource type="Texture2D" uid="uid://b435cqm35cj4u" path="res://assets/daynightcycle-ui.png" id="3_so0y8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qhbnj"]
+shader = ExtResource("1_x3jdy")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8xwu1"]
+shader = ExtResource("1_x3jdy")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5isbm"]
+atlas = ExtResource("3_so0y8")
+region = Rect2(1, 1, 73, 43)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_14tbr"]
+shader = ExtResource("1_x3jdy")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucvpk"]
+atlas = ExtResource("3_so0y8")
+region = Rect2(2, 47, 16, 5)
+
+[node name="DayNightCycleUI" type="Control"]
+material = SubResource("ShaderMaterial_qhbnj")
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_altij")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_8xwu1")
+layout_mode = 0
+offset_right = 73.0
+offset_bottom = 43.0
+texture = SubResource("AtlasTexture_5isbm")
+
+[node name="CenterContainerDay" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 9.0
+offset_right = 50.0
+offset_bottom = 20.0
+
+[node name="DayLabelBackground" type="Label" parent="CenterContainerDay"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.898039, 0.576471, 0.419608, 1)
+theme_override_fonts/font = ExtResource("3_6qa0r")
+theme_override_font_sizes/font_size = 8
+text = "Day 13"
+metadata/_edit_lock_ = true
+
+[node name="DayLabel" type="Label" parent="CenterContainerDay/DayLabelBackground"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_top = -1.0
+offset_right = 33.0
+offset_bottom = 10.0
+theme_override_colors/font_color = Color(0.490196, 0.219608, 0.2, 1)
+theme_override_fonts/font = ExtResource("3_6qa0r")
+theme_override_font_sizes/font_size = 8
+text = "Day 13"
+metadata/_edit_lock_ = true
+
+[node name="CenterContainerTime" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 29.0
+offset_right = 51.0
+offset_bottom = 40.0
+
+[node name="TimeLabelBackground" type="Label" parent="CenterContainerTime"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.898039, 0.576471, 0.419608, 1)
+theme_override_fonts/font = ExtResource("3_6qa0r")
+theme_override_font_sizes/font_size = 8
+text = "12:00 am"
+metadata/_edit_lock_ = true
+
+[node name="TimeLabel" type="Label" parent="CenterContainerTime/TimeLabelBackground"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_top = -1.0
+offset_right = 41.0
+offset_bottom = 10.0
+theme_override_colors/font_color = Color(0.490196, 0.219608, 0.2, 1)
+theme_override_fonts/font = ExtResource("3_6qa0r")
+theme_override_font_sizes/font_size = 8
+text = "12:00 am"
+metadata/_edit_lock_ = true
+
+[node name="Arrow" type="TextureRect" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_14tbr")
+layout_mode = 0
+offset_left = 51.0
+offset_top = 19.0
+offset_right = 91.0
+offset_bottom = 59.0
+rotation = -1.60047
+pivot_offset = Vector2(1, 2.5)
+texture = SubResource("AtlasTexture_ucvpk")
+stretch_mode = 2

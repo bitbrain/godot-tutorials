@@ -11,18 +11,20 @@ config_version=5
 [application]
 
 config/name="Day & Night Cycle"
+run/main_scene="res://day-night-cycle/demo/daynightcycle_scene.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
 
 [display]
 
-window/size/viewport_width=480
-window/size/viewport_height=270
+window/size/viewport_width=384
+window/size/viewport_height=216
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
-window/stretch/aspect="keep_width"
+window/stretch/aspect="keep_height"
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=0
+textures/canvas_textures/default_texture_filter=2
+textures/default_filters/use_nearest_mipmap_filter=true
