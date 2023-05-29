@@ -7,5 +7,5 @@ var time = 0
 
 func _process(delta):
 	time += delta * TIME_SCALE
-	#position.x = sin(time) * RADIUS
-	#position.y = cos(time) * RADIUS
+	position.x = sin(time) * RADIUS
+	position.y = cos(time) * RADIUS

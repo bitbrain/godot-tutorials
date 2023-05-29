@@ -1570,6 +1570,7 @@ position = Vector2(-24, -34)
 script = ExtResource("6_acbig")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="DayNightCycleUI" parent="CanvasLayer" instance=ExtResource("7_fta5l")]
 offset_left = 7.0
