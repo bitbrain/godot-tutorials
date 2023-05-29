@@ -27,4 +27,3 @@ window/stretch/aspect="keep_height"
 [rendering]
 
 textures/canvas_textures/default_texture_filter=2
-textures/default_filters/use_nearest_mipmap_filter=true

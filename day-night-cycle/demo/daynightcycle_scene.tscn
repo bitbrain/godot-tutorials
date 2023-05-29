@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bkpc1kjm4t2xn" path="res://assets/daynightcycle-gradient-texture.tres" id="8_q68bt"]
 [ext_resource type="PackedScene" uid="uid://ceolcwatpaicu" path="res://day-night-cycle/demo/ui/daynightcycle_ui.tscn" id="9_6s66b"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_afgso"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mgxa1"]
 shader = ExtResource("3_anw4o")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xw4we"]
@@ -1236,7 +1236,7 @@ terrain_set_0/terrain_6/name = "Swamp Water"
 terrain_set_0/terrain_6/color = Color(0.584314, 0.384314, 0.337255, 1)
 sources/0 = SubResource("TileSetAtlasSource_xw4we")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pb6hi"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lbq2c"]
 shader = ExtResource("3_anw4o")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y1w76"]
@@ -1547,7 +1547,7 @@ script = ExtResource("1_2vpqm")
 [node name="SoundMachine" parent="." instance=ExtResource("2_tcd40")]
 
 [node name="TileMap" type="TileMap" parent="."]
-material = SubResource("ShaderMaterial_afgso")
+material = SubResource("ShaderMaterial_mgxa1")
 position = Vector2(-2, 56)
 tile_set = SubResource("TileSet_tsv8f")
 format = 2
@@ -1561,7 +1561,7 @@ layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(-458753, 0, 12, -393217, 0, 13, -327681, 0, 14, -262145, 0, 15, -524288, 65536, 12, -458752, 65536, 13, -393216, 65536, 14, -327680, 65536, 15, -524287, 131072, 12, -458751, 131072, 13, -393215, 131072, 14, -327679, 131072, 15, -524286, 196608, 12, -458750, 196608, 13, -393214, 196608, 14, -327678, 196608, 15, 131064, 458752, 13, 196600, 458752, 14, 262136, 458752, 15, 131065, 524288, 13, 196601, 524288, 14, 262137, 524288, 15, -262140, 720896, 8, -327668, 720896, 8, -589819, 720896, 8, -393213, 720896, 8, -327677, 720896, 9, -196601, 720896, 9, -196615, 720896, 9, -131082, 720896, 8, 65532, 720896, 8, 131069, 720896, 8, -917505, 65536, 16)
 
 [node name="CityLife" type="AnimatedSprite2D" parent="TileMap"]
-material = SubResource("ShaderMaterial_pb6hi")
+material = SubResource("ShaderMaterial_lbq2c")
 position = Vector2(16, -96)
 sprite_frames = SubResource("SpriteFrames_gteid")
 autoplay = "default"
@@ -1576,6 +1576,7 @@ script = ExtResource("7_2hfvm")
 gradient_texture = ExtResource("8_q68bt")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="DayNightCycleUI" parent="CanvasLayer" instance=ExtResource("9_6s66b")]
 offset_left = 7.0

@@ -9,7 +9,7 @@ extends Node
 @onready var night_soundscape: AudioStreamPlayer = $NightSoundscape
 
 
-func set_daytime(day: int, hour: int, minute: int) -> void:
+func set_daytime(_day: int, hour: int, minute: int) -> void:
 	if hour <= day_hour or hour >= night_hour:
 		# check if we need to play night soundscape
 		if not night_soundscape.playing:
