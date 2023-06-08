@@ -1574,6 +1574,8 @@ script = ExtResource("6_2pewr")
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 script = ExtResource("7_2hfvm")
 gradient_texture = ExtResource("8_q68bt")
+TIME_MULTIPLIER = 1.0
+INITIAL_HOUR = 5
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
