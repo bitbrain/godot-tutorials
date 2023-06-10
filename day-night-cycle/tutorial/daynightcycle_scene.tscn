@@ -1539,7 +1539,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="DayNightCycleScene2" type="Node2D"]
+[node name="DayNightCycleScene" type="Node2D"]
 script = ExtResource("1_2tcb3")
 
 [node name="SoundMachine" parent="." instance=ExtResource("2_jh0d1")]
