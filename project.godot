@@ -15,6 +15,10 @@ run/main_scene="res://day-night-cycle/demo/daynightcycle_scene.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.png"
 
+[audio]
+
+driver/output_latency=30
+
 [display]
 
 window/size/viewport_width=384
@@ -23,7 +27,5 @@ window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_height"
-
-[rendering]
-
-textures/canvas_textures/default_texture_filter=2
+window/per_pixel_transparency/allowed=true
+window/vsync/vsync_mode=2
