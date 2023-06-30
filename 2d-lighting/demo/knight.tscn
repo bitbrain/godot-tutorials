@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://b5b3jqq2pg13j"]
+
+[ext_resource type="Shader" path="res://assets/pixelperfect.gdshader" id="1_6bcd1"]
+[ext_resource type="Texture2D" uid="uid://d25ci3sr3w67g" path="res://assets/knight.png" id="1_yffau"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_tpuev"]
+cull_mode = 1
+polygon = PackedVector2Array(-5, -1, 1, -1, 1, -3, 5, -3, 7, -1, 7, 2, 7, 4, 1, 4, -4, 4, -4, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_htshb"]
+shader = ExtResource("1_6bcd1")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtyoa"]
+atlas = ExtResource("1_yffau")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygc4x"]
+atlas = ExtResource("1_yffau")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdnhm"]
+atlas = ExtResource("1_yffau")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1eijn"]
+atlas = ExtResource("1_yffau")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sqp7r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtyoa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygc4x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdnhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1eijn")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[node name="Knight" type="Node2D"]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+show_behind_parent = true
+light_mask = 3
+visibility_layer = 3
+position = Vector2(-1, 3)
+occluder = SubResource("OccluderPolygon2D_tpuev")
+sdf_collision = false
+occluder_light_mask = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_as_relative = false
+material = SubResource("ShaderMaterial_htshb")
+sprite_frames = SubResource("SpriteFrames_sqp7r")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.459656
