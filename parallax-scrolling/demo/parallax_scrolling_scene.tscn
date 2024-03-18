@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1suddfhq3bvj"]
+
+[ext_resource type="Script" path="res://parallax-scrolling/demo/parallax_scrolling_scene.gd" id="1_hw4kv"]
+[ext_resource type="Texture2D" uid="uid://b8fxwtv4tlswy" path="res://parallax-scrolling/foreground.png" id="1_lf13h"]
+[ext_resource type="Texture2D" uid="uid://b65egtqawg84f" path="res://parallax-scrolling/foreground1.1.png" id="2_dj4io"]
+[ext_resource type="Texture2D" uid="uid://bw7vvqr3mn581" path="res://parallax-scrolling/foreground2.png" id="3_lt3tx"]
+[ext_resource type="Texture2D" uid="uid://d3o8mi2op7tv6" path="res://parallax-scrolling/foreground3.png" id="4_501np"]
+
+[node name="ParallaxScrollingScene" type="Node2D"]
+script = ExtResource("1_hw4kv")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.737255, 0.411765, 0.384314, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-1.90735e-06, -3.05176e-05)
+scale = Vector2(1, 1)
+limit_bottom = 70
+limit_smoothed = true
+
+[node name="Foreground1" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.1, 1)
+repeat_size = Vector2(768, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Foreground1"]
+texture = ExtResource("1_lf13h")
+
+[node name="Foreground2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.2, 1)
+repeat_size = Vector2(768, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Foreground2"]
+texture = ExtResource("2_dj4io")
+
+[node name="Foreground3" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.6, 1)
+repeat_size = Vector2(768, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Foreground3"]
+texture = ExtResource("3_lt3tx")
+
+[node name="Foreground4" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1.4, 1)
+repeat_size = Vector2(768, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Foreground4"]
+texture = ExtResource("4_501np")
