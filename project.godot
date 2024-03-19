@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Day & Night Cycle"
+config/name="bitbrain's Godot 4 tutorials"
 run/main_scene="res://day-night-cycle/demo/daynightcycle_scene.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.png"
