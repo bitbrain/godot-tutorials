@@ -29,6 +29,13 @@ window/stretch/mode="canvas_items"
 window/stretch/scale_mode="integer"
 window/vsync/vsync_mode=2
 
+[file_customization]
+
+folder_colors={
+"res://day-night-cycle/tutorial/": "teal",
+"res://parallax-scrolling/tutorial/": "teal"
+}
+
 [physics]
 
 common/physics_interpolation=true
