@@ -28,10 +28,11 @@ metadata/_edit_use_anchors_ = true
 unique_name_in_owner = true
 position = Vector2(-305.802, 36962.2)
 limit_bottom = 70
-limit_smoothed = true
+position_smoothing_enabled = true
 
 [node name="Parallax2D5" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.1, 1)
+scroll_offset = Vector2(4, -99)
 repeat_size = Vector2(768, 0)
 autoscroll = Vector2(-15, 0)
 
