@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bg27ojx5244u6"]
 
-[ext_resource type="Script" path="res://day-night-cycle/demo/audio/sound_machine.gd" id="1_qpnrf"]
+[ext_resource type="Script" uid="uid://cs1vjk5kek8yf" path="res://day-night-cycle/demo/audio/sound_machine.gd" id="1_qpnrf"]
 [ext_resource type="AudioStream" uid="uid://c80sog00tcewi" path="res://assets/morningcrow.ogg" id="2_tdbay"]
 [ext_resource type="AudioStream" uid="uid://bjt4xtcsa8a3c" path="res://assets/howlingwolf.ogg" id="3_h26o1"]
 [ext_resource type="AudioStream" uid="uid://dsaxpwngwfaye" path="res://assets/nature-soundscape.ogg" id="3_yqi26"]

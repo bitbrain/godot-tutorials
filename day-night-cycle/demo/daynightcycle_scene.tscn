@@ -1,12 +1,12 @@
 [gd_scene load_steps=57 format=3 uid="uid://cjn8wqs6tgy71"]
 
-[ext_resource type="Script" path="res://day-night-cycle/demo/daynightcycle_scene.gd" id="1_2vpqm"]
+[ext_resource type="Script" uid="uid://7aati1nq7jrk" path="res://day-night-cycle/demo/daynightcycle_scene.gd" id="1_2vpqm"]
 [ext_resource type="PackedScene" uid="uid://bg27ojx5244u6" path="res://day-night-cycle/demo/audio/sound_machine.tscn" id="2_tcd40"]
-[ext_resource type="Shader" path="res://assets/pixelperfect.gdshader" id="3_anw4o"]
+[ext_resource type="Shader" uid="uid://7i8bj7u6vcv2" path="res://assets/pixelperfect.gdshader" id="3_anw4o"]
 [ext_resource type="Texture2D" uid="uid://de7sk8el7b2vw" path="res://assets/tilemaps/overworld_tileset_grass.png" id="4_tqktw"]
 [ext_resource type="Texture2D" uid="uid://7ywh575y7xr0" path="res://assets/tilemaps/city-life.png" id="5_0b7jn"]
-[ext_resource type="Script" path="res://day-night-cycle/demo/camera_movement.gd" id="6_2pewr"]
-[ext_resource type="Script" path="res://day-night-cycle/demo/daynightcycle.gd" id="7_2hfvm"]
+[ext_resource type="Script" uid="uid://dwjni686tbmgc" path="res://day-night-cycle/demo/camera_movement.gd" id="6_2pewr"]
+[ext_resource type="Script" uid="uid://btqhu6qqppt1v" path="res://day-night-cycle/demo/daynightcycle.gd" id="7_2hfvm"]
 [ext_resource type="Texture2D" uid="uid://bkpc1kjm4t2xn" path="res://assets/daynightcycle-gradient-texture.tres" id="8_q68bt"]
 [ext_resource type="PackedScene" uid="uid://ceolcwatpaicu" path="res://day-night-cycle/demo/ui/daynightcycle_ui.tscn" id="9_6s66b"]
 

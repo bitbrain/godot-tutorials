@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://ceolcwatpaicu"]
 
-[ext_resource type="Script" path="res://day-night-cycle/demo/ui/daynightcycle_ui.gd" id="1_altij"]
-[ext_resource type="Shader" path="res://assets/pixelperfect.gdshader" id="1_x3jdy"]
+[ext_resource type="Script" uid="uid://oagcme6p2tu1" path="res://day-night-cycle/demo/ui/daynightcycle_ui.gd" id="1_altij"]
+[ext_resource type="Shader" uid="uid://7i8bj7u6vcv2" path="res://assets/pixelperfect.gdshader" id="1_x3jdy"]
 [ext_resource type="FontFile" uid="uid://dt6jbuskqvs7g" path="res://assets/fonts/pixelmix/pixelmix.ttf" id="3_6qa0r"]
 [ext_resource type="Texture2D" uid="uid://b435cqm35cj4u" path="res://assets/daynightcycle-ui.png" id="3_so0y8"]
 
